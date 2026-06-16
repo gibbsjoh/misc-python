@@ -1,8 +1,8 @@
 # misc micropython snippets eg 2 line LCD init, examples etc
 
+# ****************************************************************************************
 # setup 2 line LCD over I2C
-# requires machine_i2c_lcd.py:
-# and lcd_api.py: 
+# requires machine_i2c_lcd.py and lcd_api.py from https://github.com/dhylands/python_lcd
 # ** Imports:
 from machine_i2c_lcd import I2cLcd
 import lcd_api
@@ -21,3 +21,6 @@ lcd = I2cLcd(i2c, i2cAddress, ic2Rows, i2cCols)
 lcd.move_to(0, 0)
 lcd.putstr("Welcome!")
 
+# ^^ this works on ESP32. Haven't checked on Pi Pico but should work with relevant pins
+
+# ****************************************************************************************
