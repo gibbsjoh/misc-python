@@ -37,7 +37,8 @@ import sh1106
 oledW = 128
 oledH = 64
 oledAddress = 0x3c
-i2c = I2C(1, sda=Pin(21), scl=Pin(22))
+i2c = I2C(1, sda=Pin(21), scl=Pin(22)) # <-- ESP32
+i2c = I2C(1, sda=Pin(14), scl=Pin(15)) # <-- Pi Pico
 oledDisplay = sh1106.SH1106_I2C(oledW, oledH, i2c, None, oledAddress, rotate=0, delay=0)
 oledDisplay.init_display()
 
@@ -48,7 +49,7 @@ oledDisplay.text('to the', 0, 10, 1)
 oledDisplay.text('Jungle', 0, 19, 1)
 oledDisplay.show()
 # to clear, use this:
-oledDisplay.fill(0)
+# oledDisplay.fill(0) # <-- doesn't seem to work?
 
-# ^^ this works on ESP32. Haven't checked on Pi Pico but should work with relevant pins
+# ^^ this works on ESP32 and Pi Pico
 # ****************************************************************************************
