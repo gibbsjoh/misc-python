@@ -2,6 +2,7 @@
 
 # imports
 import network
+import config # optional, uses config.py to store ssid/password
 
 # set up hardware
 station = network.WLAN(network.STA_IF)
