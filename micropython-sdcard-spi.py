@@ -31,7 +31,9 @@ print(os.listdir("/sd"))
 
 
 # *************** esp32wroom ***************
-# some ESP32s have 2 SPI buses, HSPI and VSPI, and I always forget which maps to which SPI number..
+# Note to avoid head vs wall moments!
+# 1. The SD card readers I have need to have VCC connected to VIN on the board - 3V3 doesn't provide enough juice
+# 2. some ESP32s have 2 SPI buses, HSPI and VSPI, and I always forget which maps to which SPI number..
 # VSPI: MOSI → GPIO23, MISO → GPIO19, SCLK → GPIO18, CS → GPIO5 (SPI3) <<-- not present on my ESP32WROOM?
 # HSPI: MOSI → GPIO13, MISO → GPIO12, SCLK → GPIO14, CS → GPIO15 (SPI2) <<-- this one works 100% on my board
 
